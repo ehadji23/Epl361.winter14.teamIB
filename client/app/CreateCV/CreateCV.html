@@ -1,0 +1,200 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+<div class="col-md-12">
+<h1>Personal Information</h1>
+</div>
+
+<div class="col-md-6">
+<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+
+        <div class="form-group">
+          <label>Phone Number</label>
+
+          <input type="Phone Number" name="PhoneNum" class="form-control" ng-model="user.PhoneNum" required>
+        </div>
+
+		<div class="form-group">
+          <label>Address</label>
+
+          <input type="Address" name="Address" class="form-control" ng-model="user.Address" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+
+          <input type="Email" name="Email" class="form-control" ng-model="user.Email" required>
+        </div>
+
+		<div class="form-group">
+          <label>Website(s)-Blogs</label>
+
+          <input type="blogs" name="blogs" class="form-control" ng-model="user.blogs" required>
+        </div>
+
+        <div class="form-group">
+          <label>Instant messaging</label>
+
+          <input type="Instant_messaging" name="Instant_messaging" class="form-control" ng-model="user.Instant_messaging" required>
+        </div>
+
+        <div class="form-group">
+          <label>Citizenship</label>
+
+          <input type="Citizenship" name="Citizenship" class="form-control" ng-model="user.Citizenship" required>
+        </div>
+</form>
+</div>
+
+
+<div class="col-md-12">
+<h1>EDUCATION</h1>
+</div>
+
+<div class="col-md-6">
+<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+
+	
+        <div class="form-group" >
+        	
+        		<div class="form-group">
+          			<label>From</label>
+
+          			<input type="From" name="From" class="form-control" ng-model="user.From" required>
+
+          			<label>To</label>
+
+          			<input type="To" name="To" class="form-control" ng-model="user.To" required>
+
+          		 </div>
+          		 
+          	
+        </div>
+
+
+		<div class="form-group">
+          <label>School</label>
+
+          <input type="School" name="School" class="form-control" ng-model="user.School" required>
+        </div>
+
+
+        <div class="form-group">
+          <label>Title of qualification awarded:</label>
+
+          <input type="Titlequali" name="Titlequali" class="form-control" ng-model="user.Titlequali" required>
+        </div>
+
+		<div class="form-group">
+          <label>Grade</label>
+
+          <input type="grade" name="grade" class="form-control" ng-model="user.grade" required>
+        </div>
+</form>
+</div>
+
+
+
+
+<div class="col-md-12">
+<h1>ACHIEVEMENTS AND AWARDS</h1>
+</div>
+
+<div class="col-md-6">
+<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+
+  
+        <div class="form-group">
+          	<label>Year</label>
+
+          	<input type="Year" name="Year" class="form-control" ng-model="user.Year" required>
+         </div>
+        
+
+        <div class="form-group">
+          	<label>Title</label>
+
+          	<input type="Title" name="Title" class="form-control" ng-model="user.Title" required>
+        </div>
+      
+        <div class="form-group">
+          	<label>Description</label>
+
+          	<textarea type="Description" name="Description" class="form-control" ng-model="user.Description" required>
+        </div>
+
+</form>
+</div>
+
+<div class="col-md-12">
+<h1>ACADEMIC ADMINISTRATION</h1>
+</div>
+
+<div class="col-md-6">
+<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+
+        <div class="form-group" >
+        	
+        	<div class="form-group">
+          		<label>From</label>
+
+          		<input type="From1" name="From1" class="form-control" ng-model="user.From1" required>
+
+          		<label>To</label>
+
+          		<input type="To1" name="To1" class="form-control" ng-model="user.To1" required>
+          	</div>
+        </div>
+
+        <div class="form-group">
+          	<label>School</label>
+
+          	<textarea type="School1" name="School1" class="form-control1" ng-model="user.School" required>
+        </div>
+
+        <div class="form-group" >
+          	<label>Title</label>
+
+          	<input type="Title1" name="Title1" class="form-control" ng-model="user.Title1" required>	 
+        </div>  
+
+</form>
+</div>
+
+<div class="col-md-12">
+<h1>TEACHING EXPERIENCE</h1>
+</div>
+
+<div class="col-md-6">
+<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+
+        <div class="form-group" >
+        	
+        	<div class="form-group">
+          		<label>From</label>
+
+          		<input type="From1" name="From1" class="form-control" ng-model="user.From1" required>
+
+          		<label>To</label>
+
+          		<input type="To1" name="To1" class="form-control" ng-model="user.To1" required>
+          	</div>
+        </div>
+
+        <div class="form-group">
+          	<label>School</label>
+
+          	<textarea type="School1" name="School1" class="form-control1" ng-model="user.School" required>
+        </div>
+
+        <div class="form-group" >
+          	<label>Title</label>
+
+          	<input type="Title1" name="Title1" class="form-control" ng-model="user.Title1" required>	 
+        </div>  
+
+</form>
+</div>
+
+</div>
+
