@@ -1,4 +1,4 @@
-CreatECV
+CreatECV2
 ========
 
 node.js - υπεύθυνο για το server side , API, handling requests, accessing database
