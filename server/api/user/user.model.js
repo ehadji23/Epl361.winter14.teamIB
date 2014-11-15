@@ -6,13 +6,102 @@ var crypto = require('crypto');
 var authTypes = ['github', 'twitter', 'facebook', 'google'];
 
 var UserSchema = new Schema({
+  iscompany: Boolean,
   name: String,
+  surname:String,
   email: { type: String, lowercase: true },
+  hashedPassword: String,
+  bitrhday: Date,
+  
+
+  CV:{
+telephone: Number,
+  address: String,
+  email: { type: String, lowercase: true },
+  blogs: String,
+  AnComm: String,
+  Citizenship: String,
+  education:[{
+    From: String,
+    To: String,
+    School: String,
+    TitlDeploma: String,
+    Grade: String
+  }],
+AchievAwards:[{
+  Year: Number,
+  TitleAchiev: String,
+  DescriptionAchiev: String
+}],
+
+AcademicAdmin:[{
+  From: String,
+  To: String,
+  School:String,
+  TitleAcad: String
+}],
+
+TeachingExp:[{
+   From: String,
+  To: String,
+  School: String,
+  TitleExp: String
+}],
+
+ResearchExp:[{
+From: String,
+  To: String,
+  School: String,
+  TitleResExp: String
+}],
+
+letters:[{
+  Name: String,
+  surname: String,
+  telephone: Number,
+  email: { type: String, lowercase: true }
+}],
+
+ScientMagazines: [{
+  NameMagaz: String,
+  NameArticle: String,
+  EditionMagazine: String,
+  Year: Number
+}],
+
+Conferences: [{
+NameConf: String,
+Year: Number,
+Loc: String
+}],
+
+ResearchInter:[{
+Sector: String,
+Comments: String
+}],
+
+Languages:[{
+  Language: String,
+  Level: String
+}],
+
+ScientActiv:[{
+  DescriptionActiv: String
+}],
+
+TrainingCourse:[{
+  NameSeminar: String,
+  Year: Number
+}],
+
+},
+
   role: {
     type: String,
     default: 'user'
   },
-  hashedPassword: String,
+  
+  
   provider: String,
   salt: String,
   facebook: {},
@@ -20,6 +109,8 @@ var UserSchema = new Schema({
   google: {},
   github: {}
 });
+
+
 
 /**
  * Virtuals
