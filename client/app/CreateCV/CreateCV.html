@@ -116,12 +116,12 @@
 
           	<input type="Title" name="Title" class="form-control" ng-model="user.Title" required>
         </div>
-      
         <div class="form-group">
           	<label>Description</label>
 
-          	<textarea type="Description" name="Description" class="form-control" ng-model="user.Description" required>
+          	<input texttype="Description" name="Description" class="form-control" ng-model="user.Description" required>
         </div>
+      
 
 </form>
 </div>
@@ -146,11 +146,6 @@
           	</div>
         </div>
 
-        <div class="form-group">
-          	<label>School</label>
-
-          	<textarea type="School1" name="School1" class="form-control1" ng-model="user.School" required>
-        </div>
 
         <div class="form-group" >
           	<label>Title</label>
@@ -167,13 +162,13 @@
 
 <div class="col-md-6">
 <form class="form" name="form" ng-submit="createcv(form)" novalidate>
-
-        <div class="form-group" >
+		<label>{{user.teachings}}</label>
+        <div class="form-group" ng-repeat="teaching in user.teachings">
         	
         	<div class="form-group">
           		<label>From</label>
 
-          		<input type="From1" name="From1" class="form-control" ng-model="user.From1" required>
+          		<input type="From1" name="From1" class="form-control" ng-model="user.teaching.from" required>
 
           		<label>To</label>
 
@@ -181,11 +176,15 @@
           	</div>
         </div>
 
-        <div class="form-group">
-          	<label>School</label>
+        <a class="btn btn-facebook" ng-click='addThing()'>
+            <i class="fa fa-facebook"></i> {{message}}
+          </a>
+<div class="form-group">
+          <label>School</label>
 
-          	<textarea type="School1" name="School1" class="form-control1" ng-model="user.School" required>
+          <input type="School" name="School" class="form-control" ng-model="user.School" required>
         </div>
+
 
         <div class="form-group" >
           	<label>Title</label>
@@ -195,6 +194,245 @@
 
 </form>
 </div>
+
+
+
+
+
+<div class="col-md-12">
+<h1>RESEARCH EXPERIENCE</h1>
+</div>
+
+<div class="col-md-6">
+<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+		<label>{{user.teachings}}</label>
+        <div class="form-group" ng-repeat="teaching in user.teachings">
+        	
+        	<div class="form-group">
+          		<label>From</label>
+
+          		<input type="From1" name="From1" class="form-control" ng-model="user.teaching.from" required>
+
+          		<label>To</label>
+
+          		<input type="To1" name="To1" class="form-control" ng-model="user.To1" required>
+          	</div>
+        </div>
+
+        <a class="btn btn-facebook" ng-click='addThing()'>
+            <i class="fa fa-facebook"></i> {{message}}
+          </a>
+<div class="form-group">
+          <label>School</label>
+
+          <input type="School" name="School" class="form-control" ng-model="user.School" required>
+        </div>
+
+          
+        <div class="form-group" >
+          	<label>Title</label>
+
+          	<input type="Title1" name="Title1" class="form-control" ng-model="user.Title1" required>	 
+        </div>  
+
+</form>
+</div>
+
+<div class="col-md-12">
+<h1>REFERENCE LETTERS</h1>
+</div>
+
+<div class="col-md-6">
+<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+		<label>{{user.teachings}}</label>
+        <div class="form-group">
+          	<label>First Name</label>
+
+          	<input type="FirstName" name="FirstName" class="form-control" ng-model="user.FirstName" required>
+         </div>
+
+          <div class="form-group">
+          	<label>LastName</label>
+
+          	<input type="LastName" name="LastName" class="form-control" ng-model="user.LastName" required>
+         </div>
+        
+<div class="form-group">
+          <label>Phone Number</label>
+
+          <input type="School" name="PhoneNum" class="form-control" ng-model="user.PhoneNum" required>
+        </div>
+
+          
+        <div class="form-group" >
+          	<label>Email</label>
+
+          	<input type="Email" name="Email" class="form-control" ng-model="user.Email" required>	 
+        </div>  
+
+</form>
+</div>
+
+
+<div class="col-md-12">
+<h1>SCIENTIFIC MAGAZINES</h1>
+</div>
+
+<div class="col-md-6">
+<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+		
+        <div class="form-group">
+          	<label>Magazine Name</label>
+
+          	<input type="MagazineName" name="MagazineName" class="form-control" ng-model="user.MagazineName" required>
+         </div>
+
+          <div class="form-group">
+          	<label>ArticleName</label>
+
+          	<input type="ArticleName" name="ArticleName" class="form-control" ng-model="user.ArticleName" required>
+         </div>
+        
+		<div class="form-group">
+          <label>Edition of Magazine</label>
+
+          <input type="Edition" name="Edition" class="form-control" ng-model="user.Edition" required>
+        </div>
+
+          
+        <div class="form-group" >
+          	<label>Year</label>
+
+          	<input type="Year" name="Year" class="form-control" ng-model="user.Year" required>	 
+        </div>  
+
+</form>
+</div>
+
+
+<div class="col-md-12">
+<h1>CONFERENCES</h1>
+</div>
+
+<div class="col-md-6">
+<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+		<label>{{user.teachings}}</label>
+        <div class="form-group">
+          	<label>Conference Name</label>
+
+          	<input type="ConfName" name="ConfName" class="form-control" ng-model="user.ConfName" required>
+         </div>
+
+          <div class="form-group">
+          	<label>Year</label>
+
+          	<input type="Year" name="Year" class="form-control" ng-model="user.Year" required>
+         </div>
+        
+		<div class="form-group">
+          <label>Location</label>
+
+          <input type="Location" name="Location" class="form-control" ng-model="user.Location" required>
+        </div>
+ 
+
+</form>
+</div>
+
+<div class="col-md-12">
+<h1>RESEARCH INTERESTS</h1>
+</div>
+
+<div class="col-md-6">
+<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+		
+        <div class="form-group">
+          	<label>Sector</label>
+
+          	<input type="Sector" name="Sector" class="form-control" ng-model="user.Sector" required>
+         </div>
+
+          <div class="form-group">
+          	<label>Comments</label>
+
+          	<input type="Comments" name="Comments" class="form-control" ng-model="user.Comments" required>
+         </div>
+        
+
+</form>
+</div>
+
+<div class="col-md-12">
+<h1>LANGUAGES</h1>
+</div>
+
+<div class="col-md-6">
+<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+		<label>{{user.teachings}}</label>
+        <div class="form-group" ng-repeat="teaching in user.teachings">
+        	
+        	<div class="form-group">
+          		<label>Languages</label>
+
+          		<input type="From1" name="From1" class="form-control" ng-model="user.teaching.from" required>
+
+          		
+          	</div>
+        </div>
+
+        <a class="btn btn-facebook" ng-click='addThing()'>
+            <i class="fa fa-facebook"></i> {{message}}
+          </a>
+		<div class="form-group">
+          <label>Level</label>
+
+          <input type="School" name="School" class="form-control" ng-model="user.School" required>
+        </div>
+ 
+
+</form>
+</div>
+
+
+<div class="col-md-12">
+<h1>SCIENTIFIC ACTIVITITES</h1>
+</div>
+
+<div class="col-md-6">
+<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+		
+        <div class="form-group">
+          	<label>Description</label>
+
+          	<input type="Description" name="Description" class="form-control" ng-model="user.Description" required>
+         </div>
+     
+
+</form>
+</div>
+
+
+<div class="col-md-12">
+<h1>TRAINING COURSES</h1>
+</div>
+
+<div class="col-md-6">
+<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+		
+        <div class="form-group">
+          	<label>Name of Seminar</label>
+
+          	<input type="NameSeminar" name="NameSeminar" class="form-control" ng-model="user.NameSeminar" required>
+         </div>
+     	 <div class="form-group">
+          	<label>Year</label>
+
+          	<input type="Year" name="Year" class="form-control" ng-model="user.Year" required>
+         </div>
+
+</form>
+</div>
+
 
 </div>
 

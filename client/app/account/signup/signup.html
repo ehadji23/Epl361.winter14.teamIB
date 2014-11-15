@@ -7,7 +7,7 @@
     </div>
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="register(form)" novalidate>
-
+        <input type='checkbox' ng-model="user.company" /> Company
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                             'has-error': form.name.$invalid && submitted }">
           <label>Name</label>
@@ -21,9 +21,9 @@
 
         <div class="form-group" ng-class="{ 'has-success': form.surname.$valid && submitted,
                                             'has-error': form.surname.$invalid && submitted }">
-          <label>Surname</label>
+          <label ng-hide="user.company" >Surname</label>
 
-          <input type="text" name="surname" class="form-control" ng-model="user.surname"
+          <input ng-hide="user.company" type="text" name="surname" class="form-control" ng-model="user.surname"
                  required/>
           <p class="help-block" ng-show="form.surname.$error.required && submitted">
             A surname is required

@@ -16,7 +16,6 @@ angular.module('cvinApp')
     $scope.dt = null;
   };
 
-  Disable weekend selection
   $scope.disabled = function(date, mode) {
    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
  };
@@ -50,7 +49,8 @@ angular.module('cvinApp')
         Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
-          password: $scope.user.password
+          password: $scope.user.password,
+          iscompany: $scope.user.company
         })
         .then( function() {
           // Account created, redirect to home
