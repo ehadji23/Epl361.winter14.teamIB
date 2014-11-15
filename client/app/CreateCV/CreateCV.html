@@ -10,37 +10,31 @@
 
         <div class="form-group">
           <label>Phone Number</label>
-
-          <input type="Phone Number" name="PhoneNum" class="form-control" ng-model="user.PhoneNum" required>
+          <input type="Integer" name="PhoneNum" class="form-control" ng-model="user.CV.telephone" required>
         </div>
 
-		<div class="form-group">
+		  <div class="form-group">
           <label>Address</label>
-
-          <input type="Address" name="Address" class="form-control" ng-model="user.Address" required>
+          <input type="text" name="Address" class="form-control" ng-model="user.CV.address" required>
         </div>
 
         <div class="form-group">
           <label>Email</label>
-
-          <input type="Email" name="Email" class="form-control" ng-model="user.Email" required>
+          <input type="Email" name="Email" class="form-control" ng-model="user.CV.Email" required>
         </div>
 
-		<div class="form-group">
+		  <div class="form-group">
           <label>Website(s)-Blogs</label>
-
-          <input type="blogs" name="blogs" class="form-control" ng-model="user.blogs" required>
+          <input type="text" name="blogs" class="form-control" ng-model="user.CV.blogs" required>
         </div>
 
         <div class="form-group">
           <label>Instant messaging</label>
-
           <input type="Instant_messaging" name="Instant_messaging" class="form-control" ng-model="user.Instant_messaging" required>
         </div>
 
         <div class="form-group">
           <label>Citizenship</label>
-
           <input type="Citizenship" name="Citizenship" class="form-control" ng-model="user.Citizenship" required>
         </div>
 </form>
@@ -54,42 +48,36 @@
 <div class="col-md-6">
 <form class="form" name="form" ng-submit="createcv(form)" novalidate>
 
-	
+ 
         <div class="form-group" >
-        	
+
         		<div class="form-group">
           			<label>From</label>
-
-          			<input type="From" name="From" class="form-control" ng-model="user.From" required>
+          			<input type="text" name="From" class="form-control" ng-model="user.CV.education.From" required>
 
           			<label>To</label>
-
-          			<input type="To" name="To" class="form-control" ng-model="user.To" required>
-
-          		 </div>
-          		 
-          	
+          			<input type="text" name="To" class="form-control" ng-model="user.CV.education..To" required>
+          	</div>
         </div>
 
-
-		<div class="form-group">
+		    <div class="form-group">
           <label>School</label>
-
-          <input type="School" name="School" class="form-control" ng-model="user.School" required>
+          <input type="text" name="School" class="form-control" ng-model="user.CV.education..School" required>
         </div>
-
 
         <div class="form-group">
           <label>Title of qualification awarded:</label>
-
-          <input type="Titlequali" name="Titlequali" class="form-control" ng-model="user.Titlequali" required>
+          <input type="text" name="Titlequali" class="form-control" ng-model="user.CV.education..TitlDeploma" required>
         </div>
 
-		<div class="form-group">
+		    <div class="form-group">
           <label>Grade</label>
-
-          <input type="grade" name="grade" class="form-control" ng-model="user.grade" required>
+          <input type="text" name="grade" class="form-control" ng-model="user.CV.education..Grade" required>
         </div>
+
+ 
+  <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+  <button type="button" ng-click="addFields()" class="btn">Add Education</button>
 </form>
 </div>
 
@@ -106,23 +94,21 @@
   
         <div class="form-group">
           	<label>Year</label>
-
-          	<input type="Year" name="Year" class="form-control" ng-model="user.Year" required>
+          	<input type="int" name="Year" class="form-control" ng-model="user.CV.AchievAwards.Year" required>
          </div>
         
 
         <div class="form-group">
           	<label>Title</label>
-
-          	<input type="Title" name="Title" class="form-control" ng-model="user.Title" required>
+          	<input type="text" name="Title" class="form-control" ng-model="user.CV.AchievAwards.Title" required>
         </div>
         <div class="form-group">
           	<label>Description</label>
-
-          	<input texttype="Description" name="Description" class="form-control" ng-model="user.Description" required>
+          	<textarea  type="text" name="Description" class="form-control" ng-model="user.CV.AchievAwards.Description" required>
+            </textarea>
         </div>
-      
-
+  <button type="button" ng-click="removeItem(item)" class="btn">Remove Item</button>
+  <button type="button" ng-click="addFields()" class="btn">Add Education</button>     
 </form>
 </div>
 
@@ -134,25 +120,21 @@
 <form class="form" name="form" ng-submit="createcv(form)" novalidate>
 
         <div class="form-group" >
-        	
         	<div class="form-group">
           		<label>From</label>
-
-          		<input type="From1" name="From1" class="form-control" ng-model="user.From1" required>
+          		<input type="text" name="From1" class="form-control" ng-model="user.CV.AcademicAdmin.From" required>
 
           		<label>To</label>
-
-          		<input type="To1" name="To1" class="form-control" ng-model="user.To1" required>
+          		<input type="text" name="To1" class="form-control" ng-model="user.CV.AcademicAdmin.To" required>
           	</div>
         </div>
 
-
         <div class="form-group" >
           	<label>Title</label>
-
-          	<input type="Title1" name="Title1" class="form-control" ng-model="user.Title1" required>	 
-        </div>  
-
+          	<input type="text" name="Title1" class="form-control" ng-model="user.CV.AcademicAdmin.Title" required>	 
+        </div>
+  <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+  <button type="button" ng-click="addFields()" class="btn">Add New</button>  
 </form>
 </div>
 
@@ -161,43 +143,29 @@
 </div>
 
 <div class="col-md-6">
-<form class="form" name="form" ng-submit="createcv(form)" novalidate>
-		<label>{{user.teachings}}</label>
-        <div class="form-group" ng-repeat="teaching in user.teachings">
-        	
+<form class="form" name="TeachingExp" ng-submit="createcv(form)" novalidate>
+       
         	<div class="form-group">
-          		<label>From</label>
+          	<label>From</label>
+          	<input type="text" name="From" class="form-control" ng-model="user.CV.TeachingExp.From" required>
 
-          		<input type="From1" name="From1" class="form-control" ng-model="user.teaching.from" required>
-
-          		<label>To</label>
-
-          		<input type="To1" name="To1" class="form-control" ng-model="user.To1" required>
-          	</div>
-        </div>
-
-        <a class="btn btn-facebook" ng-click='addThing()'>
-            <i class="fa fa-facebook"></i> {{message}}
-          </a>
-<div class="form-group">
-          <label>School</label>
-
-          <input type="School" name="School" class="form-control" ng-model="user.School" required>
-        </div>
-
+          	<label>To</label>
+          	<input type="text" name="To1" class="form-control" ng-model="user.CV.TeachingExp.To" required>
+          </div>
+       
+          <div class="form-group">
+            <label>School</label>
+            <input type="text" name="School" class="form-control" ng-model="user.CV.TeachingExp.School" required>
+          </div>
 
         <div class="form-group" >
           	<label>Title</label>
-
-          	<input type="Title1" name="Title1" class="form-control" ng-model="user.Title1" required>	 
+          	<input type="text" name="Title" class="form-control" ng-model="user.CV.TeachingExp.Title" required>	 
         </div>  
-
+<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+<button type="button" ng-click="addFields()" class="btn">Add New</button>
 </form>
 </div>
-
-
-
-
 
 <div class="col-md-12">
 <h1>RESEARCH EXPERIENCE</h1>
@@ -205,36 +173,27 @@
 
 <div class="col-md-6">
 <form class="form" name="form" ng-submit="createcv(form)" novalidate>
-		<label>{{user.teachings}}</label>
-        <div class="form-group" ng-repeat="teaching in user.teachings">
-        	
-        	<div class="form-group">
+		
+        <div class="form-group">
           		<label>From</label>
-
-          		<input type="From1" name="From1" class="form-control" ng-model="user.teaching.from" required>
+          		<input type="text" name="From" class="form-control" ng-model="user.CV.ResearchExp.From" required>
 
           		<label>To</label>
-
-          		<input type="To1" name="To1" class="form-control" ng-model="user.To1" required>
-          	</div>
+          		<input type="text" name="To" class="form-control" ng-model="user.CV.ResearchExp.To" required>
         </div>
+        
 
-        <a class="btn btn-facebook" ng-click='addThing()'>
-            <i class="fa fa-facebook"></i> {{message}}
-          </a>
-<div class="form-group">
+      <div class="form-group">
           <label>School</label>
-
-          <input type="School" name="School" class="form-control" ng-model="user.School" required>
-        </div>
-
-          
-        <div class="form-group" >
-          	<label>Title</label>
-
-          	<input type="Title1" name="Title1" class="form-control" ng-model="user.Title1" required>	 
-        </div>  
-
+          <input type="text" name="School" class="form-control" ng-model="user.CV.ResearchExp.School" required>
+      </div>
+  
+      <div class="form-group" >
+          <label>Title</label>
+          <input type="text" name="Title" class="form-control" ng-model="user.CV.ResearchExp.Title1" required>	 
+      </div>  
+<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+<button type="button" ng-click="addFields()" class="btn">Add New</button>
 </form>
 </div>
 
@@ -244,32 +203,29 @@
 
 <div class="col-md-6">
 <form class="form" name="form" ng-submit="createcv(form)" novalidate>
-		<label>{{user.teachings}}</label>
+		
         <div class="form-group">
           	<label>First Name</label>
-
-          	<input type="FirstName" name="FirstName" class="form-control" ng-model="user.FirstName" required>
+          	<input type="text" name="FirstName" class="form-control" ng-model="user.CV.letters.FirstName" required>
          </div>
 
-          <div class="form-group">
+        <div class="form-group">
           	<label>LastName</label>
-
-          	<input type="LastName" name="LastName" class="form-control" ng-model="user.LastName" required>
-         </div>
+          	<input type="text" name="LastName" class="form-control" ng-model="user.CV.letters.LastName" required>
+        </div>
         
-<div class="form-group">
+        <div class="form-group">
           <label>Phone Number</label>
-
-          <input type="School" name="PhoneNum" class="form-control" ng-model="user.PhoneNum" required>
+          <input type="text" name="PhoneNum" class="form-control" ng-model="user.CV.letters.PhoneNum" required>
         </div>
 
           
         <div class="form-group" >
           	<label>Email</label>
-
-          	<input type="Email" name="Email" class="form-control" ng-model="user.Email" required>	 
+          	<input type="text" name="Email" class="form-control" ng-model="user.CV.letters.Email" required>	 
         </div>  
-
+<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+<button type="button" ng-click="addFields()" class="btn">Add New</button>
 </form>
 </div>
 
@@ -283,29 +239,25 @@
 		
         <div class="form-group">
           	<label>Magazine Name</label>
-
-          	<input type="MagazineName" name="MagazineName" class="form-control" ng-model="user.MagazineName" required>
+          	<input type="text" name="MagazineName" class="form-control" ng-model="user.CV.ScientMagazines.MagazineName" required>
          </div>
 
           <div class="form-group">
           	<label>ArticleName</label>
-
-          	<input type="ArticleName" name="ArticleName" class="form-control" ng-model="user.ArticleName" required>
+          	<input type="text" name="ArticleName" class="form-control" ng-model="user.CV.ScientMagazines.ArticleName" required>
          </div>
         
 		<div class="form-group">
           <label>Edition of Magazine</label>
-
-          <input type="Edition" name="Edition" class="form-control" ng-model="user.Edition" required>
+          <input type="text" name="Edition" class="form-control" ng-model="user.CV.ScientMagazines.Edition" required>
         </div>
 
-          
         <div class="form-group" >
           	<label>Year</label>
-
-          	<input type="Year" name="Year" class="form-control" ng-model="user.Year" required>	 
+          	<input type="text" name="Year" class="form-control" ng-model="user.CV.ScientMagazines.Year" required>	 
         </div>  
-
+<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+<button type="button" ng-click="addFields()" class="btn">Add New</button>
 </form>
 </div>
 
@@ -316,26 +268,23 @@
 
 <div class="col-md-6">
 <form class="form" name="form" ng-submit="createcv(form)" novalidate>
-		<label>{{user.teachings}}</label>
+		
         <div class="form-group">
           	<label>Conference Name</label>
-
-          	<input type="ConfName" name="ConfName" class="form-control" ng-model="user.ConfName" required>
+          	<input type="text" name="ConfName" class="form-control" ng-model="user.CV.Conferences.ConfName" required>
          </div>
 
           <div class="form-group">
           	<label>Year</label>
-
-          	<input type="Year" name="Year" class="form-control" ng-model="user.Year" required>
+          	<input type="text" name="Year" class="form-control" ng-model="user.CV.Conferences.Year" required>
          </div>
         
-		<div class="form-group">
+		  <div class="form-group">
           <label>Location</label>
-
-          <input type="Location" name="Location" class="form-control" ng-model="user.Location" required>
-        </div>
- 
-
+          <input type="text" name="Location" class="form-control" ng-model="user.CV.Conferences.Location" required>
+      </div>
+<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+<button type="button" ng-click="addFields()" class="btn">Add New</button> 
 </form>
 </div>
 
@@ -348,17 +297,15 @@
 		
         <div class="form-group">
           	<label>Sector</label>
-
-          	<input type="Sector" name="Sector" class="form-control" ng-model="user.Sector" required>
+          	<input type="text" name="Sector" class="form-control" ng-model="user.CV.ResearchInter.Sector" required>
          </div>
 
           <div class="form-group">
           	<label>Comments</label>
-
-          	<input type="Comments" name="Comments" class="form-control" ng-model="user.Comments" required>
+          	<input type="text" name="Comments" class="form-control" ng-model="user.CV.ResearchInter.Comments" required>
          </div>
-        
-
+<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+<button type="button" ng-click="addFields()" class="btn">Add New</button>
 </form>
 </div>
 
@@ -368,28 +315,18 @@
 
 <div class="col-md-6">
 <form class="form" name="form" ng-submit="createcv(form)" novalidate>
-		<label>{{user.teachings}}</label>
-        <div class="form-group" ng-repeat="teaching in user.teachings">
-        	
-        	<div class="form-group">
+		
+        <div class="form-group">
           		<label>Languages</label>
-
-          		<input type="From1" name="From1" class="form-control" ng-model="user.teaching.from" required>
-
-          		
-          	</div>
+          		<input type="text" name="languages" class="form-control" ng-model="user.CV.Languages.from" required>
         </div>
 
-        <a class="btn btn-facebook" ng-click='addThing()'>
-            <i class="fa fa-facebook"></i> {{message}}
-          </a>
 		<div class="form-group">
           <label>Level</label>
-
-          <input type="School" name="School" class="form-control" ng-model="user.School" required>
+          <input type="text" name="level" class="form-control" ng-model="user.CV.Languages.School" required>
         </div>
- 
-
+<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+<button type="button" ng-click="addFields()" class="btn">Add New</button>
 </form>
 </div>
 
@@ -403,11 +340,11 @@
 		
         <div class="form-group">
           	<label>Description</label>
-
-          	<input type="Description" name="Description" class="form-control" ng-model="user.Description" required>
-         </div>
-     
-
+          	<textarea type="text" name="Description" class="form-control" ng-model="user.CV.ScientActiv.Description" required>
+            </textarea>  
+        </div>
+<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+<button type="button" ng-click="addFields()" class="btn">Add New</button>
 </form>
 </div>
 
@@ -421,18 +358,36 @@
 		
         <div class="form-group">
           	<label>Name of Seminar</label>
-
-          	<input type="NameSeminar" name="NameSeminar" class="form-control" ng-model="user.NameSeminar" required>
+          	<input type="text" name="NameSeminar" class="form-control" ng-model="user.CV.TrainingCourse.NameSeminar" required>
          </div>
+
      	 <div class="form-group">
           	<label>Year</label>
-
-          	<input type="Year" name="Year" class="form-control" ng-model="user.Year" required>
+          	<input type="text" name="Year" class="form-control" ng-model="user.CV.TrainingCourse.Year" required>
          </div>
-
+<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+<button type="button" ng-click="addFields()" class="btn">Add New</button>
 </form>
 </div>
 
+<div class="col-md-12">
+<div ng-repeat="item in CV.education.items">
+  <div class="form-group">
+  <label>From</label>
+  <input type="string" ng-model="item.from" class="form-control"/>
+  <label>Item price {{item.id}}</label>
+  <input type="text" ng-model="item.price" class="form-control"/>
+  </div>
+<button type="button" ng-click="removeItem(item)" class="btn">Remove Item</button>
+</div>
+
+<div class="col-md-12">
+    <div>
+          <a class="btn btn-inverse btn-lg btn-login" href="/mycv">
+            Save
+          </a>
+  </div>
+</div>
 
 </div>
 
