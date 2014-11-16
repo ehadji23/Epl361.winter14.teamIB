@@ -101,9 +101,9 @@
           	<textarea  type="text" name="Description" class="form-control" ng-model="item.Description" required>
             </textarea>
         </div>
-  <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+  <button type="button" ng-click="removeAch(item)" class="btn">Remove</button>
 </div>
-  <button type="button" ng-click="addFields()" class="btn">Add New</button>     
+  <button type="button" ng-click="addAch()" class="btn">Add New</button>     
 
 </div>
 
@@ -112,23 +112,25 @@
 </div>
 
 <div class="col-md-6">
-
+<div ng-repeat="item in CreateCV.academic">
         <div class="form-group" >
         	<div class="form-group">
           		<label>From</label>
-          		<input type="text" name="From1" class="form-control" ng-model="user.CV.AcademicAdmin.From" required>
+          		<input type="text" name="From1" class="form-control" ng-model="item.From" required>
 
           		<label>To</label>
-          		<input type="text" name="To1" class="form-control" ng-model="user.CV.AcademicAdmin.To" required>
+          		<input type="text" name="To1" class="form-control" ng-model="item.To" required>
           	</div>
         </div>
 
         <div class="form-group" >
           	<label>Title</label>
-          	<input type="text" name="Title1" class="form-control" ng-model="user.CV.AcademicAdmin.Title" required>	 
+          	<input type="text" name="Title1" class="form-control" ng-model="item.Title" required>	 
         </div>
-  <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
-  <button type="button" ng-click="addFields()" class="btn">Add New</button>  
+
+   <button type="button" ng-click="removeAcad(item)" class="btn">Remove</button>
+ </div>
+  <button type="button" ng-click="addAcad()" class="btn">Add New</button>  
 
 </div>
 
@@ -137,26 +139,29 @@
 </div>
 
 <div class="col-md-6">
+<div ng-repeat="item in CreateCV.teaching">
 
         	<div class="form-group">
           	<label>From</label>
-          	<input type="text" name="From" class="form-control" ng-model="user.CV.TeachingExp.From" required>
+          	<input type="text" name="From" class="form-control" ng-model="item.From" required>
 
           	<label>To</label>
-          	<input type="text" name="To1" class="form-control" ng-model="user.CV.TeachingExp.To" required>
+          	<input type="text" name="To1" class="form-control" ng-model="item.To" required>
           </div>
        
           <div class="form-group">
             <label>School</label>
-            <input type="text" name="School" class="form-control" ng-model="user.CV.TeachingExp.School" required>
+            <input type="text" name="School" class="form-control" ng-model="item.School" required>
           </div>
 
         <div class="form-group" >
           	<label>Title</label>
-          	<input type="text" name="Title" class="form-control" ng-model="user.CV.TeachingExp.Title" required>	 
+          	<input type="text" name="Title" class="form-control" ng-model="item.Title" required>	 
+        </div>
+            <button type="button" ng-click="removeTeaching(item)" class="btn">Remove</button>
         </div>  
-<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
-<button type="button" ng-click="addFields()" class="btn">Add New</button>
+
+<button type="button" ng-click="addTeaching()" class="btn">Add New</button>
 
 </div>
 
@@ -165,28 +170,32 @@
 </div>
 
 <div class="col-md-6">
+<div ng-repeat="item in CreateCV.research">
 
 		
         <div class="form-group">
           		<label>From</label>
-          		<input type="text" name="From" class="form-control" ng-model="user.CV.ResearchExp.From" required>
+          		<input type="text" name="From" class="form-control" ng-model="item.From" required>
 
           		<label>To</label>
-          		<input type="text" name="To" class="form-control" ng-model="user.CV.ResearchExp.To" required>
+          		<input type="text" name="To" class="form-control" ng-model="item.To" required>
         </div>
         
 
       <div class="form-group">
           <label>School</label>
-          <input type="text" name="School" class="form-control" ng-model="user.CV.ResearchExp.School" required>
+          <input type="text" name="School" class="form-control" ng-model="item.School" required>
       </div>
   
       <div class="form-group" >
           <label>Title</label>
-          <input type="text" name="Title" class="form-control" ng-model="user.CV.ResearchExp.Title1" required>	 
+          <input type="text" name="Title" class="form-control" ng-model="item.Title" required>	 
+
+        </div>
+          <button type="button" ng-click="removeResearch(item)" class="btn">Remove</button>
       </div>  
-<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
-<button type="button" ng-click="addFields()" class="btn">Add New</button>
+
+<button type="button" ng-click="addResearch()" class="btn">Add New</button>
 
 </div>
 
@@ -195,29 +204,32 @@
 </div>
 
 <div class="col-md-6">
-
+<div ng-repeat="item in CreateCV.reference">
         <div class="form-group">
           	<label>First Name</label>
-          	<input type="text" name="FirstName" class="form-control" ng-model="user.CV.letters.FirstName" required>
+          	<input type="text" name="FirstName" class="form-control" ng-model="item.FirstName" required>
          </div>
 
         <div class="form-group">
-          	<label>LastName</label>
-          	<input type="text" name="LastName" class="form-control" ng-model="user.CV.letters.LastName" required>
+          	<label>Last Name</label>
+          	<input type="text" name="LastName" class="form-control" ng-model="item.LastName" required>
         </div>
         
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="text" name="PhoneNum" class="form-control" ng-model="user.CV.letters.PhoneNum" required>
+          <input type="text" name="PhoneNum" class="form-control" ng-model="item.PhoneNum" required>
         </div>
 
           
         <div class="form-group" >
           	<label>Email</label>
-          	<input type="text" name="Email" class="form-control" ng-model="user.CV.letters.Email" required>	 
+          	<input type="text" name="Email" class="form-control" ng-model="item.Email" required>	 
+        </div>
+
+        <button type="button" ng-click="removeReference(item)" class="btn">Remove</button>
         </div>  
-<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
-<button type="button" ng-click="addFields()" class="btn">Add New</button>
+
+<button type="button" ng-click="addReference()" class="btn">Add New</button>
 
 </div>
 
@@ -227,28 +239,29 @@
 </div>
 
 <div class="col-md-6">
-
+<div ng-repeat="item in CreateCV.scientific">
         <div class="form-group">
           	<label>Magazine Name</label>
-          	<input type="text" name="MagazineName" class="form-control" ng-model="user.CV.ScientMagazines.MagazineName" required>
+          	<input type="text" name="MagazineName" class="form-control" ng-model="item.MagazineName" required>
          </div>
 
           <div class="form-group">
           	<label>ArticleName</label>
-          	<input type="text" name="ArticleName" class="form-control" ng-model="user.CV.ScientMagazines.ArticleName" required>
+          	<input type="text" name="ArticleName" class="form-control" ng-model="item.ArticleName" required>
          </div>
         
 		<div class="form-group">
           <label>Edition of Magazine</label>
-          <input type="text" name="Edition" class="form-control" ng-model="user.CV.ScientMagazines.Edition" required>
+          <input type="text" name="Edition" class="form-control" ng-model="item.Edition" required>
         </div>
 
         <div class="form-group" >
           	<label>Year</label>
-          	<input type="text" name="Year" class="form-control" ng-model="user.CV.ScientMagazines.Year" required>	 
+          	<input type="text" name="Year" class="form-control" ng-model="item.Year" required>	 
         </div>  
-<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
-<button type="button" ng-click="addFields()" class="btn">Add New</button>
+<button type="button" ng-click="removeScientific(item)" class="btn">Remove</button>
+</div>
+<button type="button" ng-click="addScientific()" class="btn">Add New</button>
 
 </div>
 
@@ -258,23 +271,24 @@
 </div>
 
 <div class="col-md-6">
-
+<div ng-repeat="item in CreateCV.conferences">
         <div class="form-group">
           	<label>Conference Name</label>
-          	<input type="text" name="ConfName" class="form-control" ng-model="user.CV.Conferences.ConfName" required>
+          	<input type="text" name="ConfName" class="form-control" ng-model="item.ConfName" required>
          </div>
 
           <div class="form-group">
           	<label>Year</label>
-          	<input type="text" name="Year" class="form-control" ng-model="user.CV.Conferences.Year" required>
+          	<input type="text" name="Year" class="form-control" ng-model="item.Year" required>
          </div>
         
 		  <div class="form-group">
           <label>Location</label>
-          <input type="text" name="Location" class="form-control" ng-model="user.CV.Conferences.Location" required>
+          <input type="text" name="Locations" class="form-control" ng-model="item.Location" required>
       </div>
-<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
-<button type="button" ng-click="addFields()" class="btn">Add New</button> 
+    <button type="button" ng-click="removeConferences(item)" class="btn">Remove</button>
+    </div>
+<button type="button" ng-click="addConferences()" class="btn">Add New</button> 
 
 </div>
 
@@ -283,37 +297,40 @@
 </div>
 
 <div class="col-md-6">
-
+<div ng-repeat="item in CreateCV.researchInterest">
         <div class="form-group">
           	<label>Sector</label>
-          	<input type="text" name="Sector" class="form-control" ng-model="user.CV.ResearchInter.Sector" required>
+          	<input type="text" name="Sector" class="form-control" ng-model="item.Sector" required>
          </div>
 
           <div class="form-group">
           	<label>Comments</label>
-          	<input type="text" name="Comments" class="form-control" ng-model="user.CV.ResearchInter.Comments" required>
+          	<input type="text" name="Comments" class="form-control" ng-model="item.Comments" required>
          </div>
-<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
-<button type="button" ng-click="addFields()" class="btn">Add New</button>
+<button type="button" ng-click="removeResearchInterest(item)" class="btn">Remove</button>
 </div>
+<button type="button" ng-click="addResearchInterest()" class="btn">Add New</button>
+</div>
+
 
 <div class="col-md-12">
 <h1>LANGUAGES</h1>
 </div>
 
 <div class="col-md-6">
-
+<div ng-repeat="item in CreateCV.languages">
         <div class="form-group">
           		<label>Languages</label>
-          		<input type="text" name="languages" class="form-control" ng-model="user.CV.Languages.from" required>
+          		<input type="text" name="languages" class="form-control" ng-model="item.languages" required>
         </div>
 
 		<div class="form-group">
           <label>Level</label>
-          <input type="text" name="level" class="form-control" ng-model="user.CV.Languages.School" required>
+          <input type="text" name="level" class="form-control" ng-model="item.level" required>
         </div>
-<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
-<button type="button" ng-click="addFields()" class="btn">Add New</button>
+<button type="button" ng-click="removeLanguages(item)" class="btn">Remove</button>
+</div>
+<button type="button" ng-click="addLanguages()" class="btn">Add New</button>
 
 </div>
 
@@ -323,14 +340,15 @@
 </div>
 
 <div class="col-md-6">
-
+<div ng-repeat="item in CreateCV.scientificActivities">
         <div class="form-group">
           	<label>Description</label>
-          	<textarea type="text" name="Description" class="form-control" ng-model="user.CV.ScientActiv.Description" required>
+          	<textarea type="text" name="Description" class="form-control" ng-model="item.Description" required>
             </textarea>  
         </div>
-<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
-<button type="button" ng-click="addFields()" class="btn">Add New</button>
+<button type="button" ng-click="removeScientificActivities(item)" class="btn">Remove</button>
+</div>
+<button type="button" ng-click="addScientificActivities()" class="btn">Add New</button>
 
 </div>
 
@@ -340,18 +358,18 @@
 </div>
 
 <div class="col-md-6">
-		
+		<div ng-repeat="item in CreateCV.trainingCourses">
         <div class="form-group">
           	<label>Name of Seminar</label>
-          	<input type="text" name="NameSeminar" class="form-control" ng-model="user.CV.TrainingCourse.NameSeminar" required>
+          	<input type="text" name="NameSeminar" class="form-control" ng-model="item.NameSeminar" required>
          </div>
 
      	 <div class="form-group">
           	<label>Year</label>
-          	<input type="text" name="Year" class="form-control" ng-model="user.CV.TrainingCourse.Year" required>
+          	<input type="text" name="Year" class="form-control" ng-model="item.Year" required>
          </div>
-<button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
-<button type="button" ng-click="addFields()" class="btn">Add New</button>
+<button type="button" ng-click="removeTrainingCourses(item)" class="btn">Remove</button>
+<button type="button" ng-click="addTrainingCourses()" class="btn">Add New</button>
 
 </div>
 
