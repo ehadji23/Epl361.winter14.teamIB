@@ -20,7 +20,7 @@ angular.module('cvinApp')
           email: $scope.user.email,
           password: $scope.user.password,
           iscompany: $scope.user.company,
-          birthday: $scope.use.birthday
+          birthday: $scope.user.birthday
         })
 
         .then( function() {

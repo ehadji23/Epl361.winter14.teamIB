@@ -1,19 +1,22 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-<div class="col-md-12">
-<h1>Personal Information</h1>
-</div>
 
-<div class="col-md-6">
+
+<div class="col-md-12">
 <form class="form" name="form" ng-submit="createcv(form)" novalidate>
 
+  <div class="col-md-12">
+  <h1>PERSONAL INFORMATION</h1>
+  </div>
+
+  <div class="col-md-6">
         <div class="form-group">
           <label>Phone Number</label>
           <input type="Integer" name="PhoneNum" class="form-control" ng-model="user.CV.telephone" required>
         </div>
 
-		  <div class="form-group">
+		    <div class="form-group">
           <label>Address</label>
           <input type="text" name="Address" class="form-control" ng-model="user.CV.address" required>
         </div>
@@ -23,7 +26,7 @@
           <input type="Email" name="Email" class="form-control" ng-model="user.CV.Email" required>
         </div>
 
-		  <div class="form-group">
+		    <div class="form-group">
           <label>Website(s)-Blogs</label>
           <input type="text" name="blogs" class="form-control" ng-model="user.CV.blogs" required>
         </div>
@@ -37,51 +40,44 @@
           <label>Citizenship</label>
           <input type="Citizenship" name="Citizenship" class="form-control" ng-model="user.Citizenship" required>
         </div>
-</form>
-</div>
+   </div>     
 
-
-<div class="col-md-12">
-<h1>EDUCATION</h1>
-</div>
+  <div class="col-md-12">
+  <h1>EDUCATION</h1>
+  </div>
 
 <div class="col-md-6">
-<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+<div ng-repeat="item in user.CreateCV.education.items">
 
- 
         <div class="form-group" >
-
         		<div class="form-group">
           			<label>From</label>
-          			<input type="text" name="From" class="form-control" ng-model="user.CV.education.From" required>
+          			<input type="text" name="From" class="form-control" ng-model="item.From" required>
 
           			<label>To</label>
-          			<input type="text" name="To" class="form-control" ng-model="user.CV.education..To" required>
+          			<input type="text" name="To" class="form-control" ng-model="item.To" required>
           	</div>
         </div>
 
 		    <div class="form-group">
           <label>School</label>
-          <input type="text" name="School" class="form-control" ng-model="user.CV.education..School" required>
+          <input type="text" name="School" class="form-control" ng-model="item.School" required>
         </div>
 
         <div class="form-group">
           <label>Title of qualification awarded:</label>
-          <input type="text" name="Titlequali" class="form-control" ng-model="user.CV.education..TitlDeploma" required>
+          <input type="text" name="Titlequali" class="form-control" ng-model="item.Titlequali" required>
         </div>
 
 		    <div class="form-group">
           <label>Grade</label>
-          <input type="text" name="grade" class="form-control" ng-model="user.CV.education..Grade" required>
+          <input type="text" name="grade" class="form-control" ng-model="item.Grade" required>
         </div>
-
- 
-  <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
-  <button type="button" ng-click="addFields()" class="btn">Add Education</button>
-</form>
+    
+    <button type="button" ng-click="removeEdu(item)" class="btn">Remove</button>
 </div>
-
-
+    <button type="button" ng-click="addEdu()" class="btn">Add New</button>
+</div>
 
 
 <div class="col-md-12">
@@ -89,9 +85,7 @@
 </div>
 
 <div class="col-md-6">
-<form class="form" name="form" ng-submit="createcv(form)" novalidate>
 
-  
         <div class="form-group">
           	<label>Year</label>
           	<input type="int" name="Year" class="form-control" ng-model="user.CV.AchievAwards.Year" required>
@@ -107,9 +101,9 @@
           	<textarea  type="text" name="Description" class="form-control" ng-model="user.CV.AchievAwards.Description" required>
             </textarea>
         </div>
-  <button type="button" ng-click="removeItem(item)" class="btn">Remove Item</button>
-  <button type="button" ng-click="addFields()" class="btn">Add Education</button>     
-</form>
+  <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+  <button type="button" ng-click="addFields()" class="btn">Add New</button>     
+
 </div>
 
 <div class="col-md-12">
@@ -117,7 +111,6 @@
 </div>
 
 <div class="col-md-6">
-<form class="form" name="form" ng-submit="createcv(form)" novalidate>
 
         <div class="form-group" >
         	<div class="form-group">
@@ -135,7 +128,7 @@
         </div>
   <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
   <button type="button" ng-click="addFields()" class="btn">Add New</button>  
-</form>
+
 </div>
 
 <div class="col-md-12">
@@ -143,8 +136,7 @@
 </div>
 
 <div class="col-md-6">
-<form class="form" name="TeachingExp" ng-submit="createcv(form)" novalidate>
-       
+
         	<div class="form-group">
           	<label>From</label>
           	<input type="text" name="From" class="form-control" ng-model="user.CV.TeachingExp.From" required>
@@ -164,7 +156,7 @@
         </div>  
 <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
 <button type="button" ng-click="addFields()" class="btn">Add New</button>
-</form>
+
 </div>
 
 <div class="col-md-12">
@@ -172,7 +164,7 @@
 </div>
 
 <div class="col-md-6">
-<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+
 		
         <div class="form-group">
           		<label>From</label>
@@ -194,7 +186,7 @@
       </div>  
 <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
 <button type="button" ng-click="addFields()" class="btn">Add New</button>
-</form>
+
 </div>
 
 <div class="col-md-12">
@@ -202,8 +194,7 @@
 </div>
 
 <div class="col-md-6">
-<form class="form" name="form" ng-submit="createcv(form)" novalidate>
-		
+
         <div class="form-group">
           	<label>First Name</label>
           	<input type="text" name="FirstName" class="form-control" ng-model="user.CV.letters.FirstName" required>
@@ -226,7 +217,7 @@
         </div>  
 <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
 <button type="button" ng-click="addFields()" class="btn">Add New</button>
-</form>
+
 </div>
 
 
@@ -235,8 +226,7 @@
 </div>
 
 <div class="col-md-6">
-<form class="form" name="form" ng-submit="createcv(form)" novalidate>
-		
+
         <div class="form-group">
           	<label>Magazine Name</label>
           	<input type="text" name="MagazineName" class="form-control" ng-model="user.CV.ScientMagazines.MagazineName" required>
@@ -258,7 +248,7 @@
         </div>  
 <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
 <button type="button" ng-click="addFields()" class="btn">Add New</button>
-</form>
+
 </div>
 
 
@@ -267,8 +257,7 @@
 </div>
 
 <div class="col-md-6">
-<form class="form" name="form" ng-submit="createcv(form)" novalidate>
-		
+
         <div class="form-group">
           	<label>Conference Name</label>
           	<input type="text" name="ConfName" class="form-control" ng-model="user.CV.Conferences.ConfName" required>
@@ -285,7 +274,7 @@
       </div>
 <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
 <button type="button" ng-click="addFields()" class="btn">Add New</button> 
-</form>
+
 </div>
 
 <div class="col-md-12">
@@ -293,8 +282,7 @@
 </div>
 
 <div class="col-md-6">
-<form class="form" name="form" ng-submit="createcv(form)" novalidate>
-		
+
         <div class="form-group">
           	<label>Sector</label>
           	<input type="text" name="Sector" class="form-control" ng-model="user.CV.ResearchInter.Sector" required>
@@ -306,7 +294,6 @@
          </div>
 <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
 <button type="button" ng-click="addFields()" class="btn">Add New</button>
-</form>
 </div>
 
 <div class="col-md-12">
@@ -314,8 +301,7 @@
 </div>
 
 <div class="col-md-6">
-<form class="form" name="form" ng-submit="createcv(form)" novalidate>
-		
+
         <div class="form-group">
           		<label>Languages</label>
           		<input type="text" name="languages" class="form-control" ng-model="user.CV.Languages.from" required>
@@ -327,7 +313,7 @@
         </div>
 <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
 <button type="button" ng-click="addFields()" class="btn">Add New</button>
-</form>
+
 </div>
 
 
@@ -336,8 +322,7 @@
 </div>
 
 <div class="col-md-6">
-<form class="form" name="form" ng-submit="createcv(form)" novalidate>
-		
+
         <div class="form-group">
           	<label>Description</label>
           	<textarea type="text" name="Description" class="form-control" ng-model="user.CV.ScientActiv.Description" required>
@@ -345,7 +330,7 @@
         </div>
 <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
 <button type="button" ng-click="addFields()" class="btn">Add New</button>
-</form>
+
 </div>
 
 
@@ -354,7 +339,6 @@
 </div>
 
 <div class="col-md-6">
-<form class="form" name="form" ng-submit="createcv(form)" novalidate>
 		
         <div class="form-group">
           	<label>Name of Seminar</label>
@@ -367,27 +351,28 @@
          </div>
 <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
 <button type="button" ng-click="addFields()" class="btn">Add New</button>
-</form>
+
 </div>
 
-<div class="col-md-12">
-<div ng-repeat="item in CV.education.items">
-  <div class="form-group">
-  <label>From</label>
-  <input type="string" ng-model="item.from" class="form-control"/>
-  <label>Item price {{item.id}}</label>
-  <input type="text" ng-model="item.price" class="form-control"/>
-  </div>
-<button type="button" ng-click="removeItem(item)" class="btn">Remove Item</button>
-</div>
 
 <div class="col-md-12">
     <div>
           <a class="btn btn-inverse btn-lg btn-login" href="/mycv">
-            Save
+            Submit
           </a>
   </div>
 </div>
+<div class="col-md-12">
+  <div>
+          <a class="btn btn-inverse btn-lg btn-login" href="/CreateCV">
+            Save
+          </a>
+  </div>
 
+</div>
+
+</div>
+
+</form>
 </div>
 
