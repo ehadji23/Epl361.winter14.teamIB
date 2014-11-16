@@ -4,7 +4,7 @@
 
 
 <div class="col-md-12">
-<form class="form" name="form" ng-submit="createcv(form)" novalidate>
+<form class="form" name="form" ng-submit="CreateCV(form)" novalidate>
 
   <div class="col-md-12">
   <h1>PERSONAL INFORMATION</h1>
@@ -13,32 +13,32 @@
   <div class="col-md-6">
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="Integer" name="PhoneNum" class="form-control" ng-model="user.CV.telephone" required>
+          <input type="Integer" name="PhoneNum" class="form-control" ng-model="user.CreateCV.telephone" required>
         </div>
 
 		    <div class="form-group">
           <label>Address</label>
-          <input type="text" name="Address" class="form-control" ng-model="user.CV.address" required>
+          <input type="text" name="Address" class="form-control" ng-model="user.CreateCV.address" required>
         </div>
 
         <div class="form-group">
           <label>Email</label>
-          <input type="Email" name="Email" class="form-control" ng-model="user.CV.Email" required>
+          <input type="Email" name="Email" class="form-control" ng-model="user.CreateCV.Email" required>
         </div>
 
 		    <div class="form-group">
           <label>Website(s)-Blogs</label>
-          <input type="text" name="blogs" class="form-control" ng-model="user.CV.blogs" required>
+          <input type="text" name="blogs" class="form-control" ng-model="user.CreateCV.blogs" required>
         </div>
 
         <div class="form-group">
           <label>Instant messaging</label>
-          <input type="Instant_messaging" name="Instant_messaging" class="form-control" ng-model="user.Instant_messaging" required>
+          <input type="Instant_messaging" name="Instant_messaging" class="form-control" ng-model="user.CreateCV.Instant_messaging" required>
         </div>
 
         <div class="form-group">
           <label>Citizenship</label>
-          <input type="Citizenship" name="Citizenship" class="form-control" ng-model="user.Citizenship" required>
+          <input type="Citizenship" name="Citizenship" class="form-control" ng-model="user.CreateCV.Citizenship" required>
         </div>
    </div>     
 
@@ -85,23 +85,24 @@
 </div>
 
 <div class="col-md-6">
-
+<div ng-repeat="item in user.CreateCV.achievment.items">
         <div class="form-group">
           	<label>Year</label>
-          	<input type="int" name="Year" class="form-control" ng-model="user.CV.AchievAwards.Year" required>
+          	<input type="int" name="Year" class="form-control" ng-model="item.Year" required>
          </div>
         
 
         <div class="form-group">
           	<label>Title</label>
-          	<input type="text" name="Title" class="form-control" ng-model="user.CV.AchievAwards.Title" required>
+          	<input type="text" name="Title" class="form-control" ng-model="item.Title" required>
         </div>
         <div class="form-group">
           	<label>Description</label>
-          	<textarea  type="text" name="Description" class="form-control" ng-model="user.CV.AchievAwards.Description" required>
+          	<textarea  type="text" name="Description" class="form-control" ng-model="item.Description" required>
             </textarea>
         </div>
   <button type="button" ng-click="removeItem(item)" class="btn">Remove</button>
+</div>
   <button type="button" ng-click="addFields()" class="btn">Add New</button>     
 
 </div>

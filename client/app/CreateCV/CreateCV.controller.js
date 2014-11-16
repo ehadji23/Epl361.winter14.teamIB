@@ -1,29 +1,28 @@
 'use strict';
 
 angular.module('cvinApp')
-  .controller('CreatecvCtrl', function ($scope) {
+  .controller('CreatecvCtrl', function ($scope,$http,$location) {
     $scope.message = 'Hello';
    
 
- $scope.user = [];
- $scope.user.cv=[];
-  $scope.user.CreateCV.educations.items = [];
+ $scope.CreateCV={};
+  $scope.CreateCV.educations= [];
 
-  $scope.user.CreateCV.educations.items.push({From:'', To: '', School: ' ',Titlequali:'',grade:''});
+  $scopeCreateCV.educations.items.push({From:'', To: '', School: ' ',Titlequali:'',grade:''});
 
     $scope.addEdu = function () {
-       $scope.user.CreateCV.educations.items.push({From:'', To: '', School: ' ',Titlequali:'',grade:''});
+       $scope.CreateCV.educations.push({From:'', To: '', School: ' ',Titlequali:'',grade:''});
     };
 
     $scope.removeEdu = function(item){
       var spliced = false;
-      for(var i = 0; i < $scope.user.CreateCV.educations.items.length; i++){
-        if($scope.user.CreateCV.educations.items[i].id == item.id) {
-          $scope.user.CreateCV.educations.items.splice(i, 1);
+      for(var i = 0; i < $scope.CreateCV.educations.length; i++){
+        if($scope.CreateCV.educations[i].id == item.id) {
+          $scope.CreateCV.educations.splice(i, 1);
           spliced=true;
         }
         if (spliced) {
-          $scope.user.CreateCV.educations.items[i].id--;
+          $scope.CreateCV.educations[i].id--;
         }
       }
     };
@@ -32,15 +31,56 @@ angular.module('cvinApp')
       $scope.submitted = true;
       if(form.$valid) {
         var data = {
-          name: $scope.offer.name,
-          info: $scope.offer.info,
-          items: $scope.offer.items,
+          From: $scope.CreateCV.educations.From,
+          To: $scope.CreateCV.educations.To,
+          School: $scope.CreateCV.educations.School,
+          Titlequali: $scope.CreateCV.educations.Titlequali,
+          grade: $scope.CreateCV.educations.Grade,
         };
-        $http.post('/api/offers/' , data).success(function () {
+        $http.post('/api/CreateCV/' , data).success(function () {
             //$location.path('/');
         });
       }
     };
+
+
+
+  $scope.CreateCV.achievment= [];
+
+$scope.CreateCV.achievment.push({Year:'', Title: '', Description: ''});
+
+    $scope.addEdu = function () {
+       $scope.CreateCV.achievment.push({Year:'', Title: '', Description: ''});
+    };
+
+    $scope.removeEdu = function(item){
+      var spliced = false;
+      for(var i = 0; i < $scope.CreateCV.achievment.length; i++){
+        if($scope.CreateCV.achievment[i].id == item.id) {
+         $scope.CreateCV.achievment.splice(i, 1);
+          spliced=true;
+        }
+        if (spliced) {
+          $scope.CreateCV.achievment[i].id--;
+        }
+      }
+    };
+
+    $scope.register = function(form) {
+      $scope.submitted = true;
+      if(form.$valid) {
+        var data = {
+          Year: $scope.CreateCV.achievment.Year,
+          Title: $scope.CreateCV.achievment.Title,
+          Description: $scope.CreateCV.achievment.Description,
+
+        };
+        $http.post('/api/CreateCV/' , data).success(function () {
+            //$location.path('/');
+        });
+      }
+    };
+
 
 
   });
