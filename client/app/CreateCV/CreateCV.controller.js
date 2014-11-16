@@ -8,10 +8,10 @@ angular.module('cvinApp')
  $scope.CreateCV={};
   $scope.CreateCV.educations= [];
 
-  $scopeCreateCV.educations.items.push({From:'', To: '', School: ' ',Titlequali:'',grade:''});
+  $scope.CreateCV.educations.push({From:'', To: '', School: '',Titlequali:'',grade:''});
 
     $scope.addEdu = function () {
-       $scope.CreateCV.educations.push({From:'', To: '', School: ' ',Titlequali:'',grade:''});
+       $scope.CreateCV.educations.push({From:'', To: '', School: '',Titlequali:'',grade:''});
     };
 
     $scope.removeEdu = function(item){
@@ -35,7 +35,7 @@ angular.module('cvinApp')
           To: $scope.CreateCV.educations.To,
           School: $scope.CreateCV.educations.School,
           Titlequali: $scope.CreateCV.educations.Titlequali,
-          grade: $scope.CreateCV.educations.Grade,
+          Grade: $scope.CreateCV.educations.Grade,
         };
         $http.post('/api/CreateCV/' , data).success(function () {
             //$location.path('/');
