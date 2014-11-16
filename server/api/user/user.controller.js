@@ -79,6 +79,26 @@ exports.changePassword = function(req, res, next) {
   });
 };
 
+
+exports.cv = function(req, res, next) {
+  var userId = req.user._id;
+  var oldPass = String(req.body.oldPassword);
+  var newPass = String(req.body.newPassword);
+
+  User.findById(userId, function (err, user) {
+      user.password = newPass;
+      user.save(function(err) {
+        if (err) return validationError(res, err);
+        res.send(200);
+      });
+    
+      res.send(403);
+    
+  });
+};
+
+
+
 /**
  * Get my info
  */
