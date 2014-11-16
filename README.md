@@ -1,5 +1,6 @@
 CreatECV2
 ========
+To submit ginotan mono apo ena atomo logo tou oti to programma to eixame se ena mono pc to opoio enonotan me to github.
 
 node.js - υπεύθυνο για το server side , API, handling requests, accessing database
 ========
