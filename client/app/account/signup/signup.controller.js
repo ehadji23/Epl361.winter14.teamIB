@@ -18,9 +18,9 @@ angular.module('cvinApp')
           name: $scope.user.name,
           surname: $scope.user.surname,
           email: $scope.user.email,
-          hashedPassword: $scope.user.Password,
+          password: $scope.user.password,
           iscompany: $scope.user.company,
-          birthday: $scope.use.bday
+          birthday: $scope.use.birthday
         })
 
         .then( function() {
