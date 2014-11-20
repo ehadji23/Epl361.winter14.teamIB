@@ -1,6 +1,6 @@
 url  http://cvin-cvin.rhcloud.com/ 
 
-CreatECV
+CreateCV
 ========
 To submit ginotan mono apo ena atomo logo tou oti to programma to eixame se ena mono pc to opoio enonotan me to github.
 
