@@ -3,7 +3,17 @@
 angular.module('cvinApp')
   .controller('CreatecvCtrl', function ($scope,$http,$location) {
     $scope.message = 'Hello';
-   
+  
+
+
+$http.get('/api/users/me').success(function(me) {
+     $scope.me=me;
+     console.log($scope.me.name);
+    if (me.cv) {
+        $scope.CreateCV=me.cv;
+      }
+   });
+
 
  $scope.CreateCV={};
 
@@ -22,31 +32,14 @@ angular.module('cvinApp')
           $scope.CreateCV.educations.splice(i, 1);
           spliced=true;
         }
-        if (spliced) {
+        else if (spliced && $scope.CreateCV.educations.length>0) {
           $scope.CreateCV.educations[i].id--;
         }
       }
     };
 
-    $scope.register = function(form) {
-      $scope.submitted = true;
-      if(form.$valid) {
-        var data = {
-          From: $scope.CreateCV.educations.From,
-          To: $scope.CreateCV.educations.To,
-          School: $scope.CreateCV.educations.School,
-          Titlequali: $scope.CreateCV.educations.Titlequali,
-          Grade: $scope.CreateCV.educations.Grade,
-        };
-        $http.post('/api/CreateCV/' , data).success(function () {
-            //$location.path('/');
-        });
-      }
-    };
-
-
-
-  $scope.CreateCV.achievment= [];
+    
+ $scope.CreateCV.achievment= [];
 
 $scope.CreateCV.achievment.push({Year:'', Title: '', Description: '', id: $scope.CreateCV.achievment.length});
 
@@ -61,27 +54,13 @@ $scope.CreateCV.achievment.push({Year:'', Title: '', Description: '', id: $scope
          $scope.CreateCV.achievment.splice(i, 1);
           spliced=true;
         }
-        if (spliced) {
+       else if (spliced && $scope.CreateCV.achievment.length>0) {
           $scope.CreateCV.achievment[i].id--;
         }
       }
     };
 
-    $scope.register = function(form) {
-      $scope.submitted = true;
-      if(form.$valid) {
-        var data = {
-          Year: $scope.CreateCV.achievment.Year,
-          Title: $scope.CreateCV.achievment.Title,
-          Description: $scope.CreateCV.achievment.Description,
-
-        };
-        $http.post('/api/CreateCV/' , data).success(function () {
-            //$location.path('/');
-        });
-      }
-    };
-
+  
 $scope.CreateCV.academic= [];
 
 $scope.CreateCV.academic.push({From:'', To: '', Title: '', id: $scope.CreateCV.academic.length});
@@ -97,28 +76,14 @@ $scope.CreateCV.academic.push({From:'', To: '', Title: '', id: $scope.CreateCV.a
          $scope.CreateCV.academic.splice(i, 1);
           spliced=true;
         }
-        if (spliced) {
+       else if (spliced && $scope.CreateCV.academic.length>0) {
           $scope.CreateCV.academic[i].id--;
         }
       }
     };
 
-    $scope.register = function(form) {
-      $scope.submitted = true;
-      if(form.$valid) {
-        var data = {
-          From: $scope.CreateCV.academic.From,
-          To: $scope.CreateCV.academic.To,
-          Title: $scope.CreateCV.academic.Title,
-
-        };
-        $http.post('/api/CreateCV/' , data).success(function () {
-            //$location.path('/');
-        });
-      }
-    };
-
-    $scope.CreateCV.teaching= [];
+    
+$scope.CreateCV.teaching= [];
 
 $scope.CreateCV.teaching.push({From:'', To: '', School: '', Title: '', id: $scope.CreateCV.teaching.length});
 
@@ -133,29 +98,14 @@ $scope.CreateCV.teaching.push({From:'', To: '', School: '', Title: '', id: $scop
          $scope.CreateCV.teaching.splice(i, 1);
           spliced=true;
         }
-        if (spliced) {
+       else if (spliced && $scope.CreateCV.teaching.length>0) {
           $scope.CreateCV.teaching[i].id--;
         }
       }
     };
 
-    $scope.register = function(form) {
-      $scope.submitted = true;
-      if(form.$valid) {
-        var data = {
-          From: $scope.CreateCV.teaching.From,
-          To: $scope.CreateCV.teaching.To,
-          School: $scope.CreateCV.teaching.School,
-          Title: $scope.CreateCV.teaching.Title,
-
-        };
-        $http.post('/api/CreateCV/' , data).success(function () {
-            //$location.path('/');
-        });
-      }
-    };
-
-    $scope.CreateCV.research= [];
+   
+$scope.CreateCV.research= [];
 
 $scope.CreateCV.research.push({From:'', To: '', School: '', Title: '', id: $scope.CreateCV.research.length});
 
@@ -170,28 +120,13 @@ $scope.CreateCV.research.push({From:'', To: '', School: '', Title: '', id: $scop
          $scope.CreateCV.research.splice(i, 1);
           spliced=true;
         }
-        if (spliced) {
+       else if (spliced && $scope.CreateCV.research.length>0) {
           $scope.CreateCV.research[i].id--;
         }
       }
     };
 
-    $scope.register = function(form) {
-      $scope.submitted = true;
-      if(form.$valid) {
-        var data = {
-          From: $scope.CreateCV.research.From,
-          To: $scope.CreateCV.research.To,
-          School: $scope.CreateCV.research.School,
-          Title: $scope.CreateCV.research.Title,
-
-        };
-        $http.post('/api/CreateCV/' , data).success(function () {
-            //$location.path('/');
-        });
-      }
-    };
-
+   
 $scope.CreateCV.reference= [];
 
 $scope.CreateCV.reference.push({FirstName:'', LastName: '', PhoneNumber: '', Email: '', id: $scope.CreateCV.reference.length});
@@ -207,28 +142,13 @@ $scope.CreateCV.reference.push({FirstName:'', LastName: '', PhoneNumber: '', Ema
          $scope.CreateCV.reference.splice(i, 1);
           spliced=true;
         }
-        if (spliced) {
+        else if (spliced && $scope.CreateCV.reference.length>0) {
           $scope.CreateCV.reference[i].id--;
         }
       }
     };
 
-    $scope.register = function(form) {
-      $scope.submitted = true;
-      if(form.$valid) {
-        var data = {
-          FirstName: $scope.CreateCV.reference.FirstName,
-          LastName: $scope.CreateCV.reference.LastName,
-          PhoneNumber: $scope.CreateCV.reference.PhoneNumber,
-          Email: $scope.CreateCV.reference.Email,
-
-        };
-        $http.post('/api/CreateCV/' , data).success(function () {
-            //$location.path('/');
-        });
-      }
-    };
-
+   
 $scope.CreateCV.scientific= [];
 
 $scope.CreateCV.scientific.push({MagazineName:'', ArticleName: '', Edition: '', Year: '', id: $scope.CreateCV.scientific.length});
@@ -244,30 +164,14 @@ $scope.CreateCV.scientific.push({MagazineName:'', ArticleName: '', Edition: '', 
          $scope.CreateCV.scientific.splice(i, 1);
           spliced=true;
         }
-        if (spliced) {
+       else if (spliced && $scope.CreateCV.scientific.length>0) {
           $scope.CreateCV.scientific[i].id--;
         }
       }
     };
 
-    $scope.register = function(form) {
-      $scope.submitted = true;
-      if(form.$valid) {
-        var data = {
-          MagazineName: $scope.CreateCV.scientific.MagazineName,
-          ArticleName: $scope.CreateCV.scientific.ArticleName,
-          Edition: $scope.CreateCV.scientific.Edition,
-          Year: $scope.CreateCV.scientific.Year,
-
-        };
-        $http.post('/api/CreateCV/' , data).success(function () {
-            //$location.path('/');
-        });
-      }
-    };
-
-
-     $scope.CreateCV.conferences= [];
+   
+$scope.CreateCV.conferences= [];
 
 $scope.CreateCV.conferences.push({ConfName:'', Year: '', Locations: '', id: $scope.CreateCV.conferences.length});
 
@@ -282,25 +186,13 @@ $scope.CreateCV.conferences.push({ConfName:'', Year: '', Locations: '', id: $sco
          $scope.CreateCV.conferences.splice(i, 1);
           spliced=true;
         }
-        if (spliced) {
+       else if (spliced && $scope.CreateCV.conferences.length>0) {
           $scope.CreateCV.conferences[i].id--;
         }
       }
     };
 
-    $scope.register = function(form) {
-      $scope.submitted = true;
-      if(form.$valid) {
-        var data = {
-          ConfName: $scope.CreateCV.conferences.ConfName,
-          Year: $scope.CreateCV.conferences.Year,
-          Locations: $scope.CreateCV.conferences.Locations,
-        };
-        $http.post('/api/CreateCV/' , data).success(function () {
-            //$location.path('/');
-        });
-      }
-    };
+   
    
    $scope.CreateCV.researchInterest= [];
 
@@ -317,26 +209,13 @@ $scope.CreateCV.conferences.push({ConfName:'', Year: '', Locations: '', id: $sco
          $scope.CreateCV.researchInterest.splice(i, 1);
           spliced=true;
         }
-        if (spliced) {
+        else if (spliced && $scope.CreateCV.researchInterest.length>0) {
           $scope.CreateCV.researchInterest[i].id--;
         }
       }
     };
 
-    $scope.register = function(form) {
-      $scope.submitted = true;
-      if(form.$valid) {
-        var data = {
-          Sector: $scope.CreateCV.researchInterest.Sector,
-          Comments: $scope.CreateCV.researchInterest.Comments,
-
-        };
-        $http.post('/api/CreateCV/' , data).success(function () {
-            //$location.path('/');
-        });
-      }
-    };
-
+   
 
    $scope.CreateCV.languages= [];
 
@@ -353,27 +232,13 @@ $scope.CreateCV.conferences.push({ConfName:'', Year: '', Locations: '', id: $sco
          $scope.CreateCV.languages.splice(i, 1);
           spliced=true;
         }
-        if (spliced) {
+        else if (spliced && $scope.CreateCV.languages.length>0) {
           $scope.CreateCV.languages[i].id--;
         }
       }
     };
 
-    $scope.register = function(form) {
-      $scope.submitted = true;
-      if(form.$valid) {
-        var data = {
-          languages: $scope.CreateCV.languages.languages,
-          level: $scope.CreateCV.languages.level,
-
-        };
-        $http.post('/api/CreateCV/' , data).success(function () {
-            //$location.path('/');
-        });
-      }
-    };
-
-
+  
     $scope.CreateCV.scientificActivities= [];
 
   $scope.CreateCV.scientificActivities.push({Description:'', id: $scope.CreateCV.scientificActivities.length});
@@ -389,27 +254,14 @@ $scope.CreateCV.conferences.push({ConfName:'', Year: '', Locations: '', id: $sco
          $scope.CreateCV.scientificActivities.splice(i, 1);
           spliced=true;
         }
-        if (spliced) {
+        else if (spliced &&  $scope.CreateCV.scientificActivities.length>0) {
           $scope.CreateCV.scientificActivities[i].id--;
         }
       }
     };
 
-    $scope.register = function(form) {
-      $scope.submitted = true;
-      if(form.$valid) {
-        var data = {
-          Description: $scope.CreateCV.scientificActivities.Description,
-         
-        };
-        $http.post('/api/CreateCV/' , data).success(function () {
-            //$location.path('/');
-        });
-      }
-    };
-
-
-    $scope.CreateCV.trainingCourses= [];
+   
+  $scope.CreateCV.trainingCourses= [];
 
   $scope.CreateCV.trainingCourses.push({NameSeminar:'', Year: '' , id: $scope.CreateCV.trainingCourses.length});
 
@@ -424,22 +276,33 @@ $scope.CreateCV.conferences.push({ConfName:'', Year: '', Locations: '', id: $sco
          $scope.CreateCV.trainingCourses.splice(i, 1);
           spliced=true;
         }
-        if (spliced) {
+        else if (spliced &&  $scope.CreateCV.trainingCourses.length>0) {
           $scope.CreateCV.trainingCourses[i].id--;
         }
       }
     };
 
-    $scope.register = function(form) {
-      $scope.submitted = true;
-      if(form.$valid) {
-        var data = {
-          NameSeminar: $scope.CreateCV.trainingCourses.NameSeminar,
-          Year: $scope.CreateCV.trainingCourses.Year,
-        };
-        $http.post('/api/CreateCV/' , data).success(function () {
-            //$location.path('/');
-        });
-      }
+   
+
+ $scope.register = function () {
+      var data = {
+        cv: $scope.CreateCV,
+
+      };
+      $http.post('/api/users/cv' , data).success(function () {
+        $location.path('/mycv');
+      });
     };
-  });
+
+    $scope.submit = function () {
+      var data = {
+        cv: $scope.CreateCV,
+
+      };
+      $http.post('/api/users/cv' , data).success(function () {
+    
+      });
+    };
+
+
+});
